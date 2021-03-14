@@ -16,7 +16,7 @@ public class Cozimento extends Thread {
 	@Override
 	public void run() {
 		cozimento();
-//		--------- inicio seção critica -------
+//		--------- inicio seÃ§Ã£o critica -------
 		try {
 			semaforo.acquire();
 			entrega();
@@ -24,7 +24,7 @@ public class Cozimento extends Thread {
 			e.printStackTrace();
 		} finally {
 			semaforo.release();
-// 		---------- fim seção critica ------
+// 		---------- fim seÃ§Ã£o critica ------
 		}
 	} // fim run
 	
@@ -38,21 +38,21 @@ public class Cozimento extends Thread {
 			// incremento de tempo cozimento
 			while (increm < tempoTot) {
 				aux = (increm * 100) / tempoTot ;  
-				System.out.println("Percentual do prato de Sopa de Cebola " + idthread + " é de " + aux + " %");
+				System.out.println("Percentual do prato de Sopa de Cebola " + idthread + " Ã© de " + aux + " %");
 				increm += increm;			
 			} // fim while
-			System.out.println("Prato de Sopa de Cebola " + idthread + " está pronto");
-		} // fim if impár 
+			System.out.println("Prato de Sopa de Cebola " + idthread + " estÃ¡ pronto");
+		} // fim if impÃ¡r 
 		
 		if (idthread % 2 == 0) {		// prato de lazanha
-			tempoTot = (int) (Math.random() * 601 + 200 );
+			tempoTot = (int) (Math.random() * 601 + 600 );
 			// incremento de tempo cozimento
 			while (increm < tempoTot) {
 				aux = (increm * 100) / tempoTot ;  
-				System.out.println("Percentual do prato de Lazanha a Bolonhesa " + idthread + " é de " + aux + " %");
+				System.out.println("Percentual do prato de Lazanha a Bolonhesa " + idthread + " Ã© de " + aux + " %");
 				increm += increm;			
 			} // fim while
-			System.out.println("Prato Lazanha a Bolonhesa " + idthread + " está pronto");
+			System.out.println("Prato Lazanha a Bolonhesa " + idthread + " estÃ¡ pronto");
 		} // fim if par 		
 	} // fim metodo Cozimento
 	
